@@ -1,6 +1,9 @@
 import Footer from "@/components/footer/Footer";
 import styles from "./page.module.css";
 import Navbar from "@/components/navbar/Navbar";
+import Image from "next/image";
+import Button from "@/components/button/Button";
+import Text from "@/components/test/Text";
 
 const navList = ["HTML", "CSS", "JavaScript", "PHP"];
 
@@ -63,14 +66,26 @@ const products = [
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Navbar title={"Navbar Component"} navList={navList} />
-      {products.map((item) => (
-        <div key={item.id}>
-          <h3>{item.title}</h3>
-          <p>{item.description}</p>
-          <button>{item.price}</button>
-        </div>
-      ))}
+      {/* <Navbar title={"Navbar Component"} navList={navList} />
+      <main className={styles.main}>
+        {products.map((item) => (
+          <div className={styles.itemWrapper} key={item.id}>
+            <Image
+              src={item.image}
+              width={100}
+              height={80}
+              objectFit="contain"
+              alt="random"
+            />
+            <div>
+              <h3 className={styles.title}>{item.title}</h3>
+              <p className={styles.desc}>{item.description}</p>
+              <Button title={item.price} />
+            </div>
+          </div>
+        ))}
+      </main> */}
+      <Text />
       <Footer />
     </div>
   );

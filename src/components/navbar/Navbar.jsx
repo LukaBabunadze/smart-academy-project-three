@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import styles from "./Navbar.module.css";
 
 const Navbar = ({ title, navList }) => {
