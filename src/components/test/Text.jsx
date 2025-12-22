@@ -9,6 +9,7 @@ const Text = () => {
   const [input, setInput] = useState("");
   const [products, setProducts] = useState(null);
 
+  //useEffect hook for fetching products
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((response) => response.json())
@@ -24,6 +25,7 @@ const Text = () => {
     return number;
   };
 
+  //condition rendering
   if (products === null) {
     return <div>products are fetching</div>;
   }
