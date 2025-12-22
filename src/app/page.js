@@ -63,6 +63,7 @@ const products = [
   },
 ];
 
+//products
 export default function Home() {
   return (
     <div className={styles.container}>
