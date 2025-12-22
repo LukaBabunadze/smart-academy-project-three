@@ -25,7 +25,7 @@ const Text = () => {
     return number;
   };
 
-  //condition rendering - 12
+  //condition rendering - 1
   if (products === null) {
     return <div>products are fetching</div>;
   }
