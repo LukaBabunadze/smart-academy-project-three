@@ -1,12 +1,13 @@
+"use client";
 import Footer from "@/components/footer/Footer";
 import styles from "./page.module.css";
-import Navbar from "@/components/navbar/Navbar";
 import Image from "next/image";
-import Button from "@/components/button/Button";
 import Text from "@/components/test/Text";
+import { useEffect, useState } from "react";
+import Link from "next/link";
 
-const navList = ["HTML", "CSS", "JavaScript", "PHP"];
 
+<<<<<<< Updated upstream
 const products = [
   {
     id: 1,
@@ -63,12 +64,21 @@ const products = [
   },
 ];
 
+=======
+>>>>>>> Stashed changes
 export default function Home() {
+  const [products, setProducts] = useState(null);
+
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((resp) => resp.json())
+      .then((res) => setProducts(res));
+  }, []);
+
   return (
     <div className={styles.container}>
-      {/* <Navbar title={"Navbar Component"} navList={navList} />
       <main className={styles.main}>
-        {products.map((item) => (
+        {products?.map((item) => (
           <div className={styles.itemWrapper} key={item.id}>
             <Image
               src={item.image}
@@ -80,12 +90,14 @@ export default function Home() {
             <div>
               <h3 className={styles.title}>{item.title}</h3>
               <p className={styles.desc}>{item.description}</p>
-              <Button title={item.price} />
             </div>
+            <Link href={`/details/${item.id}`}>
+              <p>see details</p>
+            </Link>
           </div>
         ))}
-      </main> */}
-      <Text />
+      </main>
+      {/* <Text /> */}
       <Footer />
     </div>
   );
