@@ -1,5 +1,5 @@
 function layout({ children }) {
-  return <div>cart layout {children}</div>;
+  return <div>My Cart {children}</div>;
 }
 
 export default layout;

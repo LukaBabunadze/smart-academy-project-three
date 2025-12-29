@@ -1,0 +1,11 @@
+.itemContainer {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid black;
+  border-radius: 8px;
+  margin: 24px 48px;
+  width: 280px;
+  height: 240px;
+}

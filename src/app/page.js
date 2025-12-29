@@ -6,7 +6,6 @@ import Text from "@/components/test/Text";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-
 export default function Home() {
   const [products, setProducts] = useState(null);
 
