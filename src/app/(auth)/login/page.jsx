@@ -1,9 +1,13 @@
 "use client";
 import { useState } from "react";
 import styles from "./page.module.css";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { useAppDispatch, useAppSelector } from "@/lib/hook";
+import { updateUser } from "@/lib/slices/userSlice";
 function page() {
+  const router = useRouter();
+  const dispatch = useAppDispatch();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("m38rmF$");
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -25,8 +29,13 @@ function page() {
         body: JSON.stringify({ username, password }),
       });
       const result = await response.json();
+
+      const userdata = await fetch("https://fakestoreapi.com/users/1");
+      const parsedUserdata = await userdata.json();
+
+      dispatch(updateUser(parsedUserdata));
       if (result?.token) {
-        redirect("/");
+        router.push("/");
       }
     } catch (error) {
       setSubmitError("მოხდა შეცდომა");
