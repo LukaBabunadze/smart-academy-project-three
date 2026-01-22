@@ -19,7 +19,7 @@ function page() {
     fetch(`https://fakestoreapi.com/products/${id}`)
       .then((resp) => resp.json())
       .then((res) => setSingleProduct(res));
-  }, []);
+  }, [id]);
 
   const handleAddToCart = () => {
     dispatch(addToCart(singleProduct));

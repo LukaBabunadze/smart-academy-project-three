@@ -35,6 +35,7 @@ function page() {
 
       dispatch(updateUser(parsedUserdata));
       if (result?.token) {
+        localStorage.setItem("userToken", JSON.stringify(result.token));
         router.push("/");
       }
     } catch (error) {
