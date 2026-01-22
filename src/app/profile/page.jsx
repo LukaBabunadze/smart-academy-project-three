@@ -1,9 +1,11 @@
 import LogoutButton from "@/components/logoutButton/LogoutButton";
 import styles from "./page.module.css";
 
+export const dynamic = "force-dynamic";
+
 const page = async () => {
   const resp = await fetch("https://fakestoreapi.com/users/3", {
-    method: "GET",
+    cache: "no-store",
   });
   const user = await resp.json();
 

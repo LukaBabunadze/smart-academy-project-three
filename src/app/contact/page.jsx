@@ -1,5 +1,8 @@
+export const dynamic = "force-dynamic";
 const page = async () => {
-  const response = await fetch("https://fakestoreapi.com/users");
+  const response = await fetch("https://fakestoreapi.com/users", {
+    cache: "no-store",
+  });
   const contacts = await response.json();
 
   return (
